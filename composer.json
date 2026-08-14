@@ -21,14 +21,18 @@
     },
     "autoload": {
         "psr-4": {
+            "Test\Demo\": "packages/test/demo/src",
+            "Test\Seedertest\": "packages/test/seedertest/src",
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-             "Rukhsar\\PackMe\\": "packages/rukhsar/packme/src/"
+            "Rukhsar\\PackMe\\": "packages/rukhsar/packme/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
+            "Test\Demo\": "packages/test/demo/src",
+            "Test\Seedertest\": "packages/test/seedertest/src",
             "Tests\\": "tests/"
         }
     },

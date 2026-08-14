@@ -1,0 +1,39 @@
+{
+    "name": ":vendor_name/:package_name",
+    "description": "A Laravel API package for :package_name",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": ":VendorName",
+            "email": "email@example.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            ":VendorName\\:PackageName\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            ":VendorName\\:PackageName\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^12.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.24",
+        "phpunit/phpunit": "^11.5.3"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                ":VendorName\\:PackageName\\:PackageNameServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
