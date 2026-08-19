@@ -63,8 +63,6 @@ class PackMeHelper
             throw new RuntimeException('Service provider not found in package');
         }
 
-        $this->line('Publishing package assets...');
-
         if ($type === 'all' || $type === 'config') {
             $this->publishConfig($path, $basePath);
         }
@@ -74,8 +72,6 @@ class PackMeHelper
         if ($type === 'all' || $type === 'migrations') {
             $this->publishMigrations($path, $basePath);
         }
-
-        $this->info('Package published successfully!');
     }
 
     protected function publishConfig($path, $basePath)
@@ -87,7 +83,6 @@ class PackMeHelper
             foreach (glob($configSrc.'/*.php') as $file) {
                 $fileName = basename($file);
                 copy($file, $configDest.'/'.$fileName);
-                $this->line("  <info>[+]</info> Config: {$fileName}");
             }
         }
     }
@@ -102,7 +97,6 @@ class PackMeHelper
                 mkdir($viewsDest, 0777, true);
             }
             $this->copyDirectory($viewsSrc, $viewsDest);
-            $this->line("  <info>[+]</info> Views published to resources/views/vendor/".basename($path));
         }
     }
 
@@ -115,7 +109,6 @@ class PackMeHelper
             foreach (glob($migrationsSrc.'/*.php') as $file) {
                 $fileName = basename($file);
                 copy($file, $migrationsDest.'/'.$fileName);
-                $this->line("  <info>[+]</info> Migration: {$fileName}");
             }
         }
     }
@@ -147,9 +140,6 @@ class PackMeHelper
             shell_exec('cd '.escapeshellarg($path).' && git init');
             shell_exec('cd '.escapeshellarg($path).' && git add .');
             shell_exec('cd '.escapeshellarg($path).' && git commit -m "Initial commit"');
-            $this->info('Git initialized with initial commit');
-        } else {
-            $this->warn('Git repository already exists');
         }
     }
 
