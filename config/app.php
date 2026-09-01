@@ -151,6 +151,7 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+            Demo\MyPackage\MyPackageServiceProvider::class,
         Rukhsar\PackMe\PackMeServiceProvider::class,
     ],
 

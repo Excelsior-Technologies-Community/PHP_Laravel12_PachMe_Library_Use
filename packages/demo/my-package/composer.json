@@ -1,0 +1,39 @@
+{
+    "name": "demo/my-package",
+    "description": "A Laravel package for my-package",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Demo",
+            "email": "email@example.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Demo\\MyPackage\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Demo\\MyPackage\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^12.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.24",
+        "phpunit/phpunit": "^11.5.3"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Demo\\MyPackage\\MyPackageServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

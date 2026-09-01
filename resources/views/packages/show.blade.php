@@ -94,13 +94,52 @@
                         <button type="submit" class="btn btn-primary">👁️ Views</button>
                     </form>
                 </div>
-                <div class="actions">
-                    <form action="{{ route('packages.git-init', [$package['vendor'], $package['name']]) }}" method="POST" style="display: inline;">
-                        @csrf
-                        <button type="submit" class="btn btn-primary" {{ $hasGit ? 'disabled' : '' }}>🔧 Init Git</button>
-                    </form>
-                    <a href="{{ route('packages.packagist', [$package['vendor'], $package['name']]) }}" class="btn btn-secondary">📦 Packagist Guide</a>
-                </div>
+<div class="actions">
+
+    <form
+        action="{{ route(
+            'packages.git-init',
+            [$package['vendor'], $package['name']]
+        ) }}"
+        method="POST"
+        style="display: inline;"
+    >
+        @csrf
+
+        <button
+            type="submit"
+            class="btn btn-primary"
+            {{ $hasGit ? 'disabled' : '' }}
+        >
+            🔧 Init Git
+        </button>
+    </form>
+
+
+    <a
+        href="{{ route(
+            'packages.packagist',
+            [$package['vendor'], $package['name']]
+        ) }}"
+        class="btn btn-secondary"
+    >
+        📦 Packagist Guide
+    </a>
+
+
+    <!-- NEW: Download ZIP -->
+
+    <a
+        href="{{ route(
+            'packages.download',
+            [$package['vendor'], $package['name']]
+        ) }}"
+        class="btn btn-success"
+    >
+        ⬇️ Download ZIP
+    </a>
+
+</div>
             </div>
         </div>
 
