@@ -1,0 +1,11 @@
+{
+    "name": "vendor/package2",
+    "description": "Laravel package for PackMe Dashboard testing",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Vendor\\Package2\\": "src/"
+        }
+    }
+}

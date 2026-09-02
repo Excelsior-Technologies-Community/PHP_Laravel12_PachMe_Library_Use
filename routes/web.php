@@ -9,7 +9,7 @@ Route::get('/packme-test', function () {
 
 /*
 |--------------------------------------------------------------------------
-| PackMe Package Dashboard
+| Package Dashboard
 |--------------------------------------------------------------------------
 */
 
@@ -17,6 +17,17 @@ Route::get(
     '/packages',
     [PackageDashboardController::class, 'index']
 )->name('packages.index');
+
+/*
+|--------------------------------------------------------------------------
+| Export Packages
+|--------------------------------------------------------------------------
+*/
+
+Route::get(
+    '/packages/export',
+    [PackageDashboardController::class, 'export']
+)->name('packages.export');
 
 /*
 |--------------------------------------------------------------------------
@@ -64,7 +75,7 @@ Route::get(
 
 /*
 |--------------------------------------------------------------------------
-| Download Package ZIP
+| Download ZIP
 |--------------------------------------------------------------------------
 */
 
@@ -72,6 +83,17 @@ Route::get(
     '/packages/{vendor}/{name}/download',
     [PackageDashboardController::class, 'download']
 )->name('packages.download');
+
+/*
+|--------------------------------------------------------------------------
+| Delete Package
+|--------------------------------------------------------------------------
+*/
+
+Route::delete(
+    '/packages/{vendor}/{name}',
+    [PackageDashboardController::class, 'destroy']
+)->name('packages.destroy');
 
 /*
 |--------------------------------------------------------------------------

@@ -24,6 +24,9 @@
     },
     "autoload": {
         "psr-4": {
+            "Vendor\Package3\": "packages/vendor/package3/src",
+            "Vendor\Package2\": "packages/vendor/package2/src",
+            "Vendor\Package1\": "packages/vendor/package1/src",
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
@@ -35,6 +38,9 @@
     },
     "autoload-dev": {
         "psr-4": {
+            "Vendor\Package3\": "packages/vendor/package3/src",
+            "Vendor\Package2\": "packages/vendor/package2/src",
+            "Vendor\Package1\": "packages/vendor/package1/src",
             "Tests\\": "tests/",
             "Test\\Demo\\": "packages/test/demo/src/",
             "Test\\Seedertest\\": "packages/test/seedertest/src/"
